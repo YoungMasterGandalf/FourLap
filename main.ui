@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	
+	
+	background-color: rgb(38, 56, 90);
+	
+	color: rgb(198, 203, 207);
+	border-radius: 10px;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_fourier">
+       <property name="geometry">
+        <rect>
+         <x>-50</x>
+         <y>0</y>
+         <width>341</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>36</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(39, 247, 195);</string>
+       </property>
+       <property name="text">
+        <string>Four&lt;strong&gt;ier</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_laplace">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>60</y>
+         <width>371</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>36</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(39, 247, 195);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lap&lt;/span&gt;lace &lt;span style=&quot; font-size:10pt;&quot;&gt;ver. 1.1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignHCenter|Qt::AlignTop</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_laplace">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>210</y>
+         <width>711</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>example: t^n (Laplace), 1/(p^2+3*p+2) (inverse Laplace)</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_EnterLaplace">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>170</y>
+         <width>621</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Enter &lt;/span&gt;a function for &lt;span style=&quot; font-weight:600;&quot;&gt;Lap&lt;/span&gt;lace transform or its inverse&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_EnterFourier">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>320</y>
+         <width>621</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Enter &lt;/span&gt;a function for &lt;span style=&quot; font-weight:600;&quot;&gt;Lap&lt;/span&gt;lace transform or its inverse&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_fourier">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>360</y>
+         <width>711</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>example: exp(-x^2) (Fourier),  sqrt(pi)*exp(-(pi*k)^2) (inverse Fourier)</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_laplace">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>260</y>
+         <width>351</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(39, 247, 195);
+background-color: rgb(105, 121, 175);</string>
+       </property>
+       <property name="text">
+        <string>Laplace</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_laplaceInverse">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>260</y>
+         <width>351</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(39, 247, 195);
+background-color: rgb(105, 121, 175);</string>
+       </property>
+       <property name="text">
+        <string>Inverse Laplace</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_fourier">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>410</y>
+         <width>351</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(39, 247, 195);
+background-color: rgb(105, 121, 175);</string>
+       </property>
+       <property name="text">
+        <string>Fourier</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_fourierInverse">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>410</y>
+         <width>351</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(39, 247, 195);
+background-color: rgb(105, 121, 175);</string>
+       </property>
+       <property name="text">
+        <string>Inverse Fourier</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>470</y>
+         <width>71</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(39, 247, 195);</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Res&lt;/span&gt;ult:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>470</y>
+         <width>671</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The result will appear in a seperate window...&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_quit">
+       <property name="geometry">
+        <rect>
+         <x>652</x>
+         <y>20</y>
+         <width>101</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(105, 121, 175);
+color: rgb(39, 247, 195);</string>
+       </property>
+       <property name="text">
+        <string>QUIT</string>
+       </property>
+      </widget>
+      <zorder>label_laplace</zorder>
+      <zorder>label_fourier</zorder>
+      <zorder>lineEdit_laplace</zorder>
+      <zorder>label_EnterLaplace</zorder>
+      <zorder>label_EnterFourier</zorder>
+      <zorder>lineEdit_fourier</zorder>
+      <zorder>pushButton_laplace</zorder>
+      <zorder>pushButton_laplaceInverse</zorder>
+      <zorder>pushButton_fourier</zorder>
+      <zorder>pushButton_fourierInverse</zorder>
+      <zorder>label</zorder>
+      <zorder>label_2</zorder>
+      <zorder>pushButton_quit</zorder>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
