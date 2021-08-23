@@ -1,28 +1,29 @@
 import sys
 import platform
-from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
-from PySide2.QtWidgets import *
+#from PySide2 import QtCore, QtGui, QtWidgets
+#from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
+#from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+#from PySide2.QtWidgets import *
 from sympy import *
 from sympy.abc import *
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 ## ==> SPLASH SCREEN
-from ui_splash_screen import Ui_SplashScreen
+from ui_splash_screen2 import Ui_SplashScreen
 
 ## ==> MAIN WINDOW
-from ui_main import Ui_MainWindow
+from ui_main2 import Ui_MainWindow
 
 ## ==> RESULT WINDOW
-from ui_result import Ui_Result
+from ui_result2 import Ui_Result
 
 ## ==> GLOBALS
 counter = 0
 
 # YOUR APPLICATION
-class MainWindow(QMainWindow):
+class MainWindow(QtWidgets.QMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        QtWidgets.QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
@@ -129,9 +130,9 @@ class MainWindow(QMainWindow):
 
 
 # SPLASH SCREEN
-class SplashScreen(QMainWindow):
+class SplashScreen(QtWidgets.QMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        QtWidgets.QMainWindow.__init__(self)
         self.ui = Ui_SplashScreen()
         self.ui.setupUi(self)
 
@@ -146,11 +147,11 @@ class SplashScreen(QMainWindow):
 
 
         ## DROP SHADOW EFFECT
-        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow = QtWidgets.QGraphicsDropShadowEffect(self)
         self.shadow.setBlurRadius(20)
         self.shadow.setXOffset(0)
         self.shadow.setYOffset(0)
-        self.shadow.setColor(QColor(0, 0, 0, 60))
+        self.shadow.setColor(QtGui.QColor(0, 0, 0, 60))
         self.ui.dropShadowframe.setGraphicsEffect(self.shadow)
 
         ## QTIMER ==> START
@@ -207,9 +208,9 @@ class SplashScreen(QMainWindow):
 
     
 # RESULT SCREEN
-class Result(QMainWindow):
+class Result(QtWidgets.QMainWindow):
     def __init__(self,vysledek):
-        QMainWindow.__init__(self)
+        QtWidgets.QMainWindow.__init__(self)
         self.ui = Ui_Result()
         self.ui.setupUi(self)
 
@@ -242,6 +243,6 @@ class Result(QMainWindow):
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     window = SplashScreen()
     sys.exit(app.exec_())
