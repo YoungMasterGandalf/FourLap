@@ -6,7 +6,7 @@ import platform
 #from PySide2.QtWidgets import *
 from sympy import *
 from sympy.abc import *
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
 
 ## ==> SPLASH SCREEN
 from ui_splash_screen2 import Ui_SplashScreen

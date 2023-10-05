@@ -6,10 +6,10 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+    def setupUi(self, MainWindow: QtWidgets.QMainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -25,8 +25,8 @@ class Ui_MainWindow(object):
 "    color: rgb(198, 203, 207);\n"
 "    border-radius: 10px;\n"
 "}")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
         self.label_fourier = QtWidgets.QLabel(self.frame)
         self.label_fourier.setGeometry(QtCore.QRect(-50, 0, 341, 81))
@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         font.setPointSize(36)
         self.label_fourier.setFont(font)
         self.label_fourier.setStyleSheet("color: rgb(39, 247, 195);")
-        self.label_fourier.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_fourier.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_fourier.setObjectName("label_fourier")
         self.label_laplace = QtWidgets.QLabel(self.frame)
         self.label_laplace.setGeometry(QtCore.QRect(90, 60, 371, 81))
@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         font.setPointSize(36)
         self.label_laplace.setFont(font)
         self.label_laplace.setStyleSheet("color: rgb(39, 247, 195);")
-        self.label_laplace.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
+        self.label_laplace.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter|QtCore.Qt.AlignmentFlag.AlignTop)
         self.label_laplace.setObjectName("label_laplace")
         self.lineEdit_laplace = QtWidgets.QLineEdit(self.frame)
         self.lineEdit_laplace.setGeometry(QtCore.QRect(30, 210, 711, 41))
@@ -184,5 +184,5 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 

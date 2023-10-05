@@ -6,10 +6,10 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
 
 class Ui_SplashScreen(object):
-    def setupUi(self, SplashScreen):
+    def setupUi(self, SplashScreen: QtWidgets.QMainWindow):
         SplashScreen.setObjectName("SplashScreen")
         SplashScreen.resize(687, 397)
         self.centralwidget = QtWidgets.QWidget(SplashScreen)
@@ -27,8 +27,8 @@ class Ui_SplashScreen(object):
 "    color: rgb(198, 203, 207);\n"
 "    border-radius: 10px;\n"
 "}")
-        self.dropShadowframe.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.dropShadowframe.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.dropShadowframe.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.dropShadowframe.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.dropShadowframe.setObjectName("dropShadowframe")
         self.label_laplace = QtWidgets.QLabel(self.dropShadowframe)
         self.label_laplace.setGeometry(QtCore.QRect(170, 120, 441, 91))
@@ -37,7 +37,7 @@ class Ui_SplashScreen(object):
         font.setPointSize(36)
         self.label_laplace.setFont(font)
         self.label_laplace.setStyleSheet("color: rgb(39, 247, 195);")
-        self.label_laplace.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_laplace.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_laplace.setObjectName("label_laplace")
         self.label_fourier = QtWidgets.QLabel(self.dropShadowframe)
         self.label_fourier.setGeometry(QtCore.QRect(90, 60, 341, 81))
@@ -46,7 +46,7 @@ class Ui_SplashScreen(object):
         font.setPointSize(36)
         self.label_fourier.setFont(font)
         self.label_fourier.setStyleSheet("color: rgb(39, 247, 195);")
-        self.label_fourier.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_fourier.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_fourier.setObjectName("label_fourier")
         self.progressBar = QtWidgets.QProgressBar(self.dropShadowframe)
         self.progressBar.setGeometry(QtCore.QRect(70, 290, 531, 23))
@@ -74,7 +74,7 @@ class Ui_SplashScreen(object):
         font.setFamily("Segoe UI")
         font.setPointSize(8)
         self.label_loading.setFont(font)
-        self.label_loading.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_loading.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_loading.setObjectName("label_loading")
         self.label_credits = QtWidgets.QLabel(self.dropShadowframe)
         self.label_credits.setGeometry(QtCore.QRect(20, 350, 631, 20))
@@ -83,7 +83,7 @@ class Ui_SplashScreen(object):
         font.setPointSize(8)
         self.label_credits.setFont(font)
         self.label_credits.setStyleSheet("color: rgb(103, 119, 172);")
-        self.label_credits.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_credits.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.label_credits.setObjectName("label_credits")
         self.label_description = QtWidgets.QLabel(self.dropShadowframe)
         self.label_description.setGeometry(QtCore.QRect(0, 210, 661, 41))
@@ -92,7 +92,7 @@ class Ui_SplashScreen(object):
         font.setPointSize(16)
         self.label_description.setFont(font)
         self.label_description.setStyleSheet("color: rgb(101, 116, 168);")
-        self.label_description.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_description.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_description.setObjectName("label_description")
         self.verticalLayout.addWidget(self.dropShadowframe)
         SplashScreen.setCentralWidget(self.centralwidget)
@@ -100,7 +100,7 @@ class Ui_SplashScreen(object):
         self.retranslateUi(SplashScreen)
         QtCore.QMetaObject.connectSlotsByName(SplashScreen)
 
-    def retranslateUi(self, SplashScreen):
+    def retranslateUi(self, SplashScreen: QtWidgets.QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         SplashScreen.setWindowTitle(_translate("SplashScreen", "MainWindow"))
         self.label_laplace.setText(_translate("SplashScreen", "<html><head/><body><p><span style=\" font-weight:600;\">Lap</span>lace</p></body></html>"))
@@ -117,5 +117,5 @@ if __name__ == "__main__":
     ui = Ui_SplashScreen()
     ui.setupUi(SplashScreen)
     SplashScreen.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
